@@ -20,7 +20,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "serializable.Person{" +
                 "dog=" + dog +
                 ", red=" + red +
                 ", name='" + name + '\'' +
