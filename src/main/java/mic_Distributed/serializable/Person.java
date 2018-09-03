@@ -1,4 +1,4 @@
-package serializable;
+package mic_Distributed.serializable;
 
 import com.baidu.bjf.remoting.protobuf.FieldType;
 import com.baidu.bjf.remoting.protobuf.annotation.Protobuf;

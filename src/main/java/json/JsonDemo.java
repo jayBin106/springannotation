@@ -7,7 +7,7 @@ import com.caucho.hessian.io.HessianInput;
 import com.caucho.hessian.io.HessianOutput;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
-import serializable.Person;
+import mic_Distributed.serializable.Person;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

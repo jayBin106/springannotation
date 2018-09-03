@@ -1,4 +1,4 @@
-package RmI;
+package mic_Distributed.RmI;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

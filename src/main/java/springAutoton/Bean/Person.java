@@ -34,7 +34,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "serializable.Person{" +
+        return "mic_Distributed.serializable.Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';

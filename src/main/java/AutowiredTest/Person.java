@@ -20,7 +20,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "serializable.Person{" +
+        return "mic_Distributed.serializable.Person{" +
                 "dog=" + dog +
                 ", red=" + red +
                 ", name='" + name + '\'' +
