@@ -1,5 +1,5 @@
 
-package mic_WebService;
+package mic_WebService.client;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
@@ -10,7 +10,7 @@ import javax.xml.namespace.QName;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the mic_webservice package. 
+ * generated in the mic_webservice.service package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -24,11 +24,11 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _SayHello_QNAME = new QName("http://mic_WebService/", "sayHello");
-    private final static QName _SayHelloResponse_QNAME = new QName("http://mic_WebService/", "sayHelloResponse");
+    private final static QName _SayHelloResponse_QNAME = new QName("http://service.mic_WebService/", "sayHelloResponse");
+    private final static QName _SayHello_QNAME = new QName("http://service.mic_WebService/", "sayHello");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: mic_webservice
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: mic_webservice.service
      * 
      */
     public ObjectFactory() {
@@ -51,21 +51,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SayHello }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://mic_WebService/", name = "sayHello")
-    public JAXBElement<SayHello> createSayHello(SayHello value) {
-        return new JAXBElement<SayHello>(_SayHello_QNAME, SayHello.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SayHelloResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://mic_WebService/", name = "sayHelloResponse")
+    @XmlElementDecl(namespace = "http://service.mic_WebService/", name = "sayHelloResponse")
     public JAXBElement<SayHelloResponse> createSayHelloResponse(SayHelloResponse value) {
         return new JAXBElement<SayHelloResponse>(_SayHelloResponse_QNAME, SayHelloResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SayHello }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service.mic_WebService/", name = "sayHello")
+    public JAXBElement<SayHello> createSayHello(SayHello value) {
+        return new JAXBElement<SayHello>(_SayHello_QNAME, SayHello.class, null, value);
     }
 
 }

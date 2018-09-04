@@ -1,5 +1,5 @@
 
-package mic_WebService;
+package mic_WebService.client;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -17,7 +17,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "SayGoodImpl", targetNamespace = "http://mic_WebService/")
+@WebService(name = "SayGoodImpl", targetNamespace = "http://service.mic_WebService/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -32,9 +32,9 @@ public interface SayGoodImpl {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sayHello", targetNamespace = "http://mic_WebService/", className = "mic_WebService.SayHello")
-    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://mic_WebService/", className = "mic_WebService.SayHelloResponse")
-    @Action(input = "http://mic_WebService/SayGoodImpl/sayHelloRequest", output = "http://mic_WebService/SayGoodImpl/sayHelloResponse")
+    @RequestWrapper(localName = "sayHello", targetNamespace = "http://service.mic_WebService/", className = "mic_WebService.client.SayHello")
+    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://service.mic_WebService/", className = "mic_WebService.client.SayHelloResponse")
+    @Action(input = "http://service.mic_WebService/SayGoodImpl/sayHelloRequest", output = "http://service.mic_WebService/SayGoodImpl/sayHelloResponse")
     public String sayHello(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);

@@ -1,7 +1,5 @@
 
-package mic_WebService;
-
-import mic_WebService.service.SayGoodImpl;
+package mic_WebService.client;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.*;
@@ -15,14 +13,14 @@ import java.net.URL;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "SayGoodImplService", targetNamespace = "http://mic_WebService/", wsdlLocation = "http://localhost:8080/vip/good?wsdl")
+@WebServiceClient(name = "SayGoodImplService", targetNamespace = "http://service.mic_WebService/", wsdlLocation = "http://localhost:8080/vip/good?wsdl")
 public class SayGoodImplService
     extends Service
 {
 
     private final static URL SAYGOODIMPLSERVICE_WSDL_LOCATION;
     private final static WebServiceException SAYGOODIMPLSERVICE_EXCEPTION;
-    private final static QName SAYGOODIMPLSERVICE_QNAME = new QName("http://mic_WebService/", "SayGoodImplService");
+    private final static QName SAYGOODIMPLSERVICE_QNAME = new QName("http://service.mic_WebService/", "SayGoodImplService");
 
     static {
         URL url = null;
@@ -67,7 +65,7 @@ public class SayGoodImplService
      */
     @WebEndpoint(name = "SayGoodImplPort")
     public SayGoodImpl getSayGoodImplPort() {
-        return super.getPort(new QName("http://mic_WebService/", "SayGoodImplPort"), SayGoodImpl.class);
+        return super.getPort(new QName("http://service.mic_WebService/", "SayGoodImplPort"), SayGoodImpl.class);
     }
 
     /**
@@ -79,7 +77,7 @@ public class SayGoodImplService
      */
     @WebEndpoint(name = "SayGoodImplPort")
     public SayGoodImpl getSayGoodImplPort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://mic_WebService/", "SayGoodImplPort"), SayGoodImpl.class, features);
+        return super.getPort(new QName("http://service.mic_WebService/", "SayGoodImplPort"), SayGoodImpl.class, features);
     }
 
     private static URL __getWsdlLocation() {
