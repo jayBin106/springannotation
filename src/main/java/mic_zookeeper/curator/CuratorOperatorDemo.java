@@ -21,7 +21,7 @@ public class CuratorOperatorDemo {
 
     @Test
     public void create() throws Exception {
-        String forPath = curatorFramework.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT).forPath("/curator", "123".getBytes());
+        String forPath = curatorFramework.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT).forPath("/LOCKS", "123".getBytes());
         System.out.println("节点创建成功-----》" + forPath);
     }
 
@@ -35,7 +35,7 @@ public class CuratorOperatorDemo {
 
     @Test
     public void delete() throws Exception {
-        curatorFramework.delete().deletingChildrenIfNeeded().forPath("/jay/j3");
+        curatorFramework.delete().deletingChildrenIfNeeded().forPath("/LOCKS");
     }
 
     @Test
@@ -125,5 +125,16 @@ public class CuratorOperatorDemo {
         }
         System.out.println("java8遍历方法。。。。。。。。");
         lists.forEach(a -> System.out.println(a));
+    }
+
+    @Test
+    public void List排序测试() {
+        ArrayList<String> strings = new ArrayList<>();
+        strings.add("1");
+        strings.add("4");
+        strings.add("111");
+        System.out.println("java8遍历方法。。。。。。。。");
+        Collections.sort(strings, (String s1, String s2) -> s1.compareTo(s2));
+        strings.forEach(a -> System.out.println(a));
     }
 }

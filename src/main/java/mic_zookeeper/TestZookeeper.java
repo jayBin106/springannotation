@@ -18,7 +18,7 @@ public class TestZookeeper {
     private final static String ZookeeperString = "192.168.1.226:2181";
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    private static ZooKeeper zooKeeper = null;
+    public static ZooKeeper zooKeeper = null;
 
     public TestZookeeper() {
         try {
