@@ -8,7 +8,7 @@ import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.data.Stat;
 import org.junit.Test;
 
-import java.util.Collection;
+import java.util.*;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -29,18 +29,18 @@ public class CuratorOperatorDemo {
     public void select() throws Exception {
         Stat stat = new Stat();
         System.out.println("stat----->" + stat);
-        byte[] bytes = curatorFramework.getData().storingStatIn(stat).forPath("/curator2");
+        byte[] bytes = curatorFramework.getData().storingStatIn(stat).forPath("/jay");
         System.out.println("查询数据---》" + Integer.valueOf(new String(bytes)));
     }
 
     @Test
     public void delete() throws Exception {
-        curatorFramework.delete().deletingChildrenIfNeeded().forPath("/curator2");
+        curatorFramework.delete().deletingChildrenIfNeeded().forPath("/jay/j3");
     }
 
     @Test
     public void update() throws Exception {
-        Stat stat = curatorFramework.setData().forPath("/curator", "666".getBytes());
+        Stat stat = curatorFramework.setData().forPath("/jay/j3", "666".getBytes());
         System.out.println("更新创建成功-----》" + stat);
     }
 
@@ -82,13 +82,48 @@ public class CuratorOperatorDemo {
     @Test
     public void 事务操作() throws Exception {
         Collection<CuratorTransactionResult> commit = curatorFramework.inTransaction()
-                .create().forPath("/curator3", "123".getBytes()).and()    //新增操作
-                .setData().forPath("/curator2", "666".getBytes()).and().commit();  //更新节点
+                .create().forPath("/jay/j3", "123".getBytes()).and()    //新增操作
+                .setData().forPath("/jay/j1", "666".getBytes()).and().commit();  //更新节点
         for (CuratorTransactionResult curatorTransactionResult : commit) {
             System.out.println("返回 类型----》" + curatorTransactionResult.getType());
             System.out.println("返回 for地址----》" + curatorTransactionResult.getForPath());
             System.out.println("返回result地址----》" + curatorTransactionResult.getResultPath());
             System.out.println("返回ResultStat----》" + curatorTransactionResult.getResultStat());
         }
+    }
+
+    @Test
+    public void java8新特性() {
+        String[] players = {"Rafael Nadal", "Novak Djokovic",
+                "Stanislas Wawrinka", "David Ferrer",
+                "Roger Federer", "Andy Murray",
+                "Tomas Berdych", "Juan Martin Del Potro",
+                "Richard Gasquet", "John Isner"};
+        List<String> lists = new ArrayList<>();
+        System.out.println("之前的遍历方法。。。。。。。。");
+        for (String player : players) {
+            System.out.println(player);
+            lists.add(player);
+        }
+        System.out.println("之前的排序方法方法。。。。。。。。");
+        Arrays.sort(players, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.compareTo(o2);
+            }
+        });
+        for (String player : players) {
+            System.out.println(player);
+            lists.add(player);
+        }
+
+
+        System.out.println("java8遍历方法。。。。。。。。");
+        Arrays.sort(players, (String s1, String s2) -> (s1.compareTo(s2)));
+        for (String player : players) {
+            System.out.println(player);
+        }
+        System.out.println("java8遍历方法。。。。。。。。");
+        lists.forEach(a -> System.out.println(a));
     }
 }
