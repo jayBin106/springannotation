@@ -94,7 +94,6 @@ public class CuratorOperatorDemo {
 
     @Test
     public void java8新特性() {
-
         String[] players = {"Rafael Nadal", "Novak Djokovic",
                 "Stanislas Wawrinka", "David Ferrer",
                 "Roger Federer", "Andy Murray",
